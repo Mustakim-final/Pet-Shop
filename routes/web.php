@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminSliderController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
@@ -89,3 +90,16 @@ Route::get('/Admin/team/active/{id}',[TeamController::class,'active'])->name('ad
 Route::get('/Admin/team/unactive/{id}',[TeamController::class,'unactive'])->name('adminteam.unactive');
 
 Route::get('/Admin/team/delete/{id}',[TeamController::class,'delete'])->name('adminteam.delete');
+
+//Blog
+
+Route::get('/Admin/blog',[BlogController::class,'bloghome'])->name('adminblog.home');
+Route::post('/Admin/blog/post',[BlogController::class,'blogpost'])->name('adminblog.post');
+Route::get('/Admin/blog/show',[BlogController::class,'blogshow'])->name('adminblog.show');
+Route::get('/Admin/blog/update/page/{id}',[BlogController::class,'blogupdatepage'])->name('adminblog.updatepage');
+Route::post('/Admin/blog/update/post/{id}',[BlogController::class,'blogupdate'])->name('adminblog.update');
+
+Route::get('/Admin/blog/active/{id}',[BlogController::class,'active'])->name('adminblog.active');
+Route::get('/Admin/blog/unactive/{id}',[BlogController::class,'unactive'])->name('adminblog.unactive');
+
+Route::get('/Admin/blog/delete/{id}',[BlogController::class,'delete'])->name('adminblog.delete');
