@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminSliderController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -78,3 +79,13 @@ Route::get('/Admin/Product/delete/{id}',[ProductController::class,'delete'])->na
 
 //tem member
 
+Route::get('/Admin/team',[TeamController::class,'teamhome'])->name('adminteam.home');
+Route::post('/Admin/team/post',[TeamController::class,'teampost'])->name('adminteam.post');
+Route::get('/Admin/team/show',[TeamController::class,'teamshow'])->name('adminteam.show');
+Route::get('/Admin/team/update/page/{id}',[TeamController::class,'teamupdatepage'])->name('adminteam.updatepage');
+Route::post('/Admin/team/update/post/{id}',[TeamController::class,'teamupdate'])->name('adminteam.update');
+
+Route::get('/Admin/team/active/{id}',[TeamController::class,'active'])->name('adminteam.active');
+Route::get('/Admin/team/unactive/{id}',[TeamController::class,'unactive'])->name('adminteam.unactive');
+
+Route::get('/Admin/team/delete/{id}',[TeamController::class,'delete'])->name('adminteam.delete');
