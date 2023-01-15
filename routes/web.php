@@ -3,7 +3,9 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminSliderController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
@@ -20,9 +22,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/',[MainController::class,'homepage']);
 
 Auth::routes();
 
@@ -103,3 +107,13 @@ Route::get('/Admin/blog/active/{id}',[BlogController::class,'active'])->name('ad
 Route::get('/Admin/blog/unactive/{id}',[BlogController::class,'unactive'])->name('adminblog.unactive');
 
 Route::get('/Admin/blog/delete/{id}',[BlogController::class,'delete'])->name('adminblog.delete');
+
+//Contact
+
+Route::get('/Admin/contact',[ContactController::class,'contacthome'])->name('admincontact.home');
+Route::post('/Admin/contact/post',[ContactController::class,'contactpost'])->name('admincontact.post');
+Route::get('/Admin/contact/show',[ContactController::class,'contarctshow'])->name('admincontact.show');
+Route::get('/Admin/contact/update/page/{id}',[ContactController::class,'contactupdatepage'])->name('admincontact.updatepage');
+Route::post('/Admin/contact/update/post/{id}',[ContactController::class,'contactupdate'])->name('admincontact.update');
+
+Route::get('/Admin/contact/delete/{id}',[ContactController::class,'delete'])->name('admincontact.delete');

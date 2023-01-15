@@ -208,15 +208,31 @@
           </li>
 
 
-          <li class="nav-header">EXAMPLES</li>
+          <li class="nav-header">Contact</li>
           <li class="nav-item">
-            <a href="../calendar.html" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                Calendar
-                <span class="badge badge-info right">2</span>
+                Contact
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('admincontact.home') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Contact</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admincontact.show') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Show Contact</p>
+                </a>
+              </li>
+
+
+            </ul>
           </li>
 
           <li class="nav-item">
